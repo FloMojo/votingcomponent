@@ -3,15 +3,21 @@ import PropTypes from 'prop-types';
 
 
 class ChoiceBar extends React.Component{
-    constructor({choice,votes,percentage}){
-        super({choice,votes,percentage});
+    constructor(props){
+        super(props);
     }
     
+    choiceClicked(evt){
+        console.log(evt.target.innerHTML + " clicked");
+
+        this.props.onClickHandler();
+    }
+
     render(){
         return (
             <div className="ChoiceBar">
-                <div className="Progress" style={{ width : this.props.percent}}>
-                    <div className="ChoiceBarTitle">{this.props.choice}</div>
+                <div className="Progress" style={{ width : this.props.percent + "%"}}>
+                    <div className="ChoiceBarTitle" onClick={this.props.onClickHandler}>{this.props.choice}</div>
                 </div>
                 <div className="ChoiceBarBadge">{this.props.count}</div>
             </div>

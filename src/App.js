@@ -9,7 +9,7 @@ class App extends Component {
   const vote = {
     title : "How is your day?",
     description : "Tell me: how has your day benn so far?",
-    totalVotes : 20,
+    //totalVotes : 20,
     choices : [
       {id:1,choice:'good',count:7,percent:35},
       {id:2,choice:'bad',count:12,percent:60},
